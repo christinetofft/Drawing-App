@@ -1,0 +1,185 @@
+/*Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+li img{
+    width: 15px;
+    height: 15px;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rosybrown;
+}
+.container{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    max-width: 1050px;
+}
+section{
+    background: white;
+    border-radius: 7px;
+}
+.tools-board{
+    width: 210px;
+    padding: 15px 22px 0;
+}
+.tools-board .row{
+    margin-bottom: 20px;
+}
+.row .options{
+    list-style: none;
+    margin: 10px 0 0 5px;
+}
+.row .options .option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 7px;
+}
+
+.option:is(:hover, .active) img{
+    filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%)  ;
+}
+.option:is(:hover, .active) :where(span, label){
+    color: rosybrown;
+}
+.option :where(span, label){
+    padding-left: 10px;
+}
+.option #fill-color{
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+#fill-color:checked ~ label{
+    -webkit-appearance: none;
+    color: rosybrown;
+
+}
+.option #size-slider{
+    -webkit-appearance: none;
+    appearance: none;
+    background: lavenderblush;
+    border: 0.5px solid rosybrown;
+    border-radius: 2px;
+    width: 100%;
+    height: 5px;
+    margin-top: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: rosybrown;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -1.5px;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: #13bba4;
+    margin-top: -1px;
+}
+
+.colors .options{
+    display: flex;
+    justify-content: space-between;
+}
+.colors .option{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-top: 3px;
+    position: relative;
+}
+.colors .option:nth-child(1){
+    background-color: rosybrown;
+}
+.colors .option:nth-child(2){
+    background-color: black;
+}
+.colors .option:nth-child(3){
+    background-color: green;
+}
+.colors .option:nth-child(4){
+    background-color: red;
+}
+.colors .option:nth-child(5){
+    background-color: deepskyblue;
+}
+.colors .option:nth-child(6){
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+}
+
+.colors .option.selected::before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 12px;
+    width: 12px;
+    background: inherit;
+    border-radius: inherit;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+}
+
+.option #color-picker{
+    opacity: 0;
+    cursor: pointer;
+
+}
+.buttons button{
+    width: 100%;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 11px 0;
+    font-size: 0.9rem;
+    margin-bottom: 13px;
+    background: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.buttons .clear-canvas{
+    color: rosybrown;
+    border: 1px solid rosybrown;
+    transition: all 0.3s ease;
+}
+.clear-canvas:hover{
+    color: white;
+    background-color: rosybrown;
+}
+.buttons .save-img {
+    background: rosybrown;
+    border: 1px solid rosybrown;
+}
+
+.buttons .save-img:hover{
+    background: white;
+    color: rosybrown;
+    transition: all 0.3s ease;
+}
+
+.drawing-board{
+    flex: 1;
+}
+
+.drawing-board canvas{
+    width: 100%;
+    height: 100%;
+
+}
